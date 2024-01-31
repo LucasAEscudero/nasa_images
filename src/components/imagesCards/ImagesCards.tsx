@@ -1,4 +1,3 @@
-"use client";
 import ImageCard from "../imageCard/ImageCard";
 import { nasaImage } from "@/lib/types";
 
@@ -18,6 +17,7 @@ export default function ImagesCards({ images }: Props) {
               title={title}
               date={date}
               explanation={explanation}
+              i={i}
             />
           )
         )}

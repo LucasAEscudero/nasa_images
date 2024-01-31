@@ -1,7 +1,9 @@
+"use client";
 import { useEffect, useState } from "react";
 import { useFavoriteStore } from "@/store/favoritesStore";
 import Image from "next/image";
 import Link from "next/link";
+import { MotionDiv } from "../motionDiv/MotionDiv";
 
 import "./ImageCard.css";
 
@@ -10,9 +12,15 @@ interface Props {
   date: string;
   title: string;
   explanation: string;
+  i: number;
 }
 
-export default function ImageCard({ url, date, title, explanation }: Props) {
+const variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
+export default function ImageCard({ url, date, title, explanation, i }: Props) {
   const [favorite, setFavorite] = useState<boolean>(false);
   const { favorites, addFavorite, removeFavorite } = useFavoriteStore();
 
@@ -20,10 +28,6 @@ export default function ImageCard({ url, date, title, explanation }: Props) {
     if (favorite) {
       setFavorite(false);
       removeFavorite(date);
-      localStorage.setItem(
-        "favoritesImages",
-        JSON.stringify([...favorites.filter((fav) => fav.title !== title)])
-      );
     } else {
       setFavorite(true);
       addFavorite({
@@ -32,10 +36,6 @@ export default function ImageCard({ url, date, title, explanation }: Props) {
         date,
         explanation,
       });
-      localStorage.setItem(
-        "favoritesImages",
-        JSON.stringify([...favorites, { url, date, title, explanation }])
-      );
     }
   };
 
@@ -48,9 +48,16 @@ export default function ImageCard({ url, date, title, explanation }: Props) {
   }, [favorites]);
 
   return (
-    <article className="m-4 bg-stone-900 rounded" id="container">
+    <MotionDiv
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      transition={{ delay: i * 0.1, ease: "easeInOut", duration: 0.5 }}
+      viewport={{ amount: 0 }}
+      className="m-4 bg-stone-900 rounded"
+      id="container"
+    >
       <div className="star">
-        {}
         {favorite ? (
           <button type="button" onClick={handlerFavorite} className="absolute">
             <svg
@@ -85,24 +92,26 @@ export default function ImageCard({ url, date, title, explanation }: Props) {
           </button>
         )}
       </div>
-      <Link href={`/image/${date}`}>
-        <div>
-          {url.includes("www.youtube.com") ? (
-            <div className="mt-5 text-center text-blue-700">
-              <Link href={url}>Esto es un video, haga click para verlo!</Link>
-            </div>
-          ) : (
-            <Image
-              src={url}
-              alt="No contiene una imagen, es un video"
-              width={400}
-              height={300}
-              className="image"
-            />
-          )}
+      {url.includes("www.youtube.com") ? (
+        <Link href={url} target="_blank">
+          <h2 className="mt-5 mb-2 text-center text-blue-700">
+            Esto es un video, haga click para verlo!
+          </h2>
           <h3 className="m-1">{title}</h3>
-        </div>
-      </Link>
-    </article>
+        </Link>
+      ) : (
+        <Link href={`/image/${date}`}>
+          <Image
+            src={url}
+            alt="No contiene una imagen, es un video"
+            width={400}
+            height={300}
+            className="image"
+          />
+
+          <h3 className="m-1">{title}</h3>
+        </Link>
+      )}
+    </MotionDiv>
   );
 }

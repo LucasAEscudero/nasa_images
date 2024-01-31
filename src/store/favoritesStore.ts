@@ -1,10 +1,7 @@
+"use client";
+
 import { create } from "zustand";
 import { nasaImage } from "@/lib/types";
-
-//get favorites to localStorage
-let localFavs: nasaImage[] = JSON.parse(
-  localStorage.getItem("favoritesImages") || '""'
-);
 
 export interface favoritesState {
   favorites: nasaImage[];
@@ -14,7 +11,7 @@ export interface favoritesState {
 }
 
 export const useFavoriteStore = create<favoritesState>((set) => ({
-  favorites: localFavs || [],
+  favorites: [],
   addFavorite: (image: nasaImage) =>
     set((state) => ({ ...state, favorites: [...state.favorites, image] })),
   removeFavorite: (date: string) =>

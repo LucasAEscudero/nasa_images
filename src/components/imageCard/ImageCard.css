@@ -3,10 +3,6 @@
   border-top-right-radius: 0.25rem;
 }
 
-/* image:hover .star {
-  visibility: visible;
-} */
-
 .star {
   visibility: hidden;
 }
