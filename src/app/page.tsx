@@ -18,7 +18,7 @@ export default async function Home() {
     <div>
       <FrontImage today={today} />
       <section>
-        <h2 className="text-start text-2xl my-2">Ultimas 12 imagenes</h2>
+        <h2 className="text-start text-2xl my-2 ml-2">Last 12 images</h2>
         <ImagesCards images={images} />
       </section>
     </div>

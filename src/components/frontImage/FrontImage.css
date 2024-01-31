@@ -1,0 +1,7 @@
+#frontImage {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+  min-height: 25rem;
+  max-height: 30rem;
+}

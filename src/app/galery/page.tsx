@@ -30,7 +30,7 @@ function Galery() {
 
   return (
     <section>
-      <h2 className={`text-center text-2xl my-2`}>Galeria</h2>
+      <h2 className="text-center text-2xl my-2">Galery</h2>
       <div style={{ borderTop: "1px solid white" }}></div>
       <ImagesCards images={images} />
       {/* <LoadMore /> */}

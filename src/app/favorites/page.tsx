@@ -17,7 +17,7 @@ function Favorites() {
 
   return (
     <section>
-      <h2 className="text-center text-2xl my-2">Favoritos</h2>
+      <h2 className="text-center text-2xl my-2">Favorites</h2>
       <div style={{ borderTop: "1px solid white" }}></div>
       <ImagesCards images={favorites} />
     </section>
