@@ -1,25 +1,27 @@
-import fetcher from "@/lib/fetcher";
-import Image from "next/image";
-import { format, subDays } from "date-fns";
-
+"use client";
+import ImageCard from "../imageCard/ImageCard";
 import { nasaImage } from "@/lib/types";
 
-export default async function ImagesCards() {
-  const images: nasaImage[] = await fetcher(
-    `&start_date=${format(
-      subDays(new Date(), 10),
-      "yyyy-MM-dd"
-    )}&end_date=${format(new Date(), "yyyy-MM-dd")}`
-  );
+interface Props {
+  images: nasaImage[];
+}
 
+export default function ImagesCards({ images }: Props) {
   return (
-    <section style={{ display: "flex", flexWrap: "wrap" }}>
-      <h2>Imagenes de los ultimos 10 dias</h2>
-      {images?.map(({ url, title }: nasaImage) => (
-        <article key={title}>
-          <Image src={url} alt={title} width={400} height={500} />
-        </article>
-      ))}
-    </section>
+    <>
+      <div className="grid lg:grid-cols-3 sm:grid-cols-1 justify-center items-start">
+        {images.map(
+          ({ url, title, date, explanation }: nasaImage, i: number) => (
+            <ImageCard
+              key={`${title}-${i}`}
+              url={url}
+              title={title}
+              date={date}
+              explanation={explanation}
+            />
+          )
+        )}
+      </div>
+    </>
   );
 }

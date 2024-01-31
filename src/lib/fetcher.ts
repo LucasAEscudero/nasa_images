@@ -1,3 +1,4 @@
+"use server";
 const BASE_URL = "https://api.nasa.gov/planetary/apod";
 
 const fetcher = async (query?: string) => {

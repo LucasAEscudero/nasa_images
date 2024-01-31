@@ -1,6 +1,6 @@
 export interface nasaImage {
   url: string;
   title: string;
-  date?: string;
-  explanation?: string;
+  date: string;
+  explanation: string;
 }

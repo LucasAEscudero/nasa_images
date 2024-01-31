@@ -1,0 +1,20 @@
+.image {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+/* image:hover .star {
+  visibility: visible;
+} */
+
+.star {
+  visibility: hidden;
+}
+
+#container {
+  transition: 500ms;
+}
+
+#container:hover .star {
+  visibility: visible;
+}

@@ -2,9 +2,8 @@ import fetcher from "@/lib/fetcher";
 import Image from "next/image";
 import { nasaImage } from "@/lib/types";
 
-async function NasaImage({ params }: { params: { date: string } }) {
-  const image: nasaImage = await fetcher(`&date=${params.date}`);
-
+async function NasaImage({ params: { date } }: { params: { date: string } }) {
+  const image: nasaImage = await fetcher(`&date=${date}`);
   return (
     <section>
       <div>
