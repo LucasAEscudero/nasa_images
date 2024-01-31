@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="mt-2 py-1" style={{ borderTop: "1px solid white" }}>
+    <footer className="mt-2 py-1 border-t-[1px]">
       <div>
         <p className="text-xs text-center">
           Image rendering page from the NASA API

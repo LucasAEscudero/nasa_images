@@ -8,7 +8,7 @@ interface Props {
 export default function ImagesCards({ images }: Props) {
   return (
     <>
-      <div className="grid lg:grid-cols-3 sm:grid-cols-1 justify-center items-start">
+      <div className="grid lg:grid-cols-3 sm:grid-cols-1 items-start">
         {images.map(
           ({ url, title, date, explanation }: nasaImage, i: number) => (
             <ImageCard
