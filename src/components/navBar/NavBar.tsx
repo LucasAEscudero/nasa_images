@@ -13,7 +13,7 @@ const NavBar = () => {
         <ul className="flex space-x-5 pl-5">
           <li
             className={`hover:bg-stone-800 p-2 rounded hover:cursor-pointer ${
-              path === "/" ? "border-bottom-2 border-white" : ""
+              path === "/" ? "bg-stone-800" : ""
             }`}
             onClick={() => router.push("/")}
           >
@@ -21,16 +21,20 @@ const NavBar = () => {
           </li>
 
           <li
-            className="hover:bg-stone-800 p-2 rounded hover:cursor-pointer"
+            className={`hover:bg-stone-800 p-2 rounded hover:cursor-pointer ${
+              path === "/galery" ? "bg-stone-800" : ""
+            }`}
             onClick={() => router.push("/galery")}
           >
-            Galeria
+            Galery
           </li>
           <li
-            className="hover:bg-stone-800 p-2 rounded hover:cursor-pointer"
+            className={`hover:bg-stone-800 p-2 rounded hover:cursor-pointer ${
+              path === "/favorites" ? "bg-stone-800" : ""
+            }`}
             onClick={() => router.push("/favorites")}
           >
-            Favoritos
+            Favorites
           </li>
         </ul>
       </nav>
