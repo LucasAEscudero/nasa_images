@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <NavBar />
         <main>
-          <Suspense fallback={<Spinner />}>{children} </Suspense>
+          <Suspense fallback={<Spinner />}>{children}</Suspense>
         </main>
         <Footer />
       </body>

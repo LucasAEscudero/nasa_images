@@ -4,6 +4,8 @@ import { format, subDays } from "date-fns";
 
 import FrontImage from "@/components/frontImage/FrontImage";
 import ImagesCards from "@/components/imagesCards/ImagesCards";
+import { Suspense } from "react";
+import Spinner from "@/components/spinner/Spinner";
 
 export default async function Home() {
   const today = format(new Date(), "yyyy-MM-dd");
@@ -19,7 +21,9 @@ export default async function Home() {
       <FrontImage today={today} />
       <section>
         <h2 className="text-start text-2xl my-2 ml-2">Last 12 images</h2>
-        <ImagesCards images={images} />
+        <Suspense fallback={<Spinner />}>
+          <ImagesCards images={images} />
+        </Suspense>
       </section>
     </div>
   );
