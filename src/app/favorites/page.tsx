@@ -13,7 +13,7 @@ function Favorites() {
         Favorites
       </h2>
       {!favorites.length ? (
-        <Message message="No contienes ninguna imagen en favoritos" />
+        <Message message="Does not contain any images in favorites" />
       ) : (
         <ImagesCards images={favorites} />
       )}

@@ -8,8 +8,8 @@ interface Props {
 export default function Message({ message }: Props) {
   return (
     <>
-      <div className="absolute top-2/4 left-[37.5%]">
-        <h2 className="text-center"> {message}</h2>
+      <div className="m-auto md:mt-[12.5%] mt-[30%]">
+        <h2 className="text-center">{message}</h2>
       </div>
     </>
   );
