@@ -12,8 +12,8 @@ export default function NavItems({ path, name }: Props) {
 
   return (
     <li
-      className={`hover:bg-stone-800 p-2 rounded hover:cursor-pointer text-center ${
-        pathname === path && "bg-stone-800"
+      className={`hover:bg-gradient-to-t from-stone-700 p-2 rounded hover:cursor-pointer text-center transition-transform ${
+        pathname === path && "bg-gradient-to-t from-stone-700"
       }`}
       onClick={() => router.push(path)}
     >
