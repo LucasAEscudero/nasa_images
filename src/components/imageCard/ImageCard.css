@@ -3,14 +3,16 @@
   border-top-right-radius: 0.25rem;
 }
 
-.star {
-  visibility: hidden;
-}
-
 #container {
   transition: 500ms;
 }
 
-#container:hover .star {
-  visibility: visible;
+@media (min-width: 768px) {
+  .star {
+    visibility: hidden;
+  }
+
+  #container:hover .star {
+    visibility: visible;
+  }
 }

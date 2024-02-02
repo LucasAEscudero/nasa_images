@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import fetcher from "@/lib/fetcher";
 import { nasaImage } from "@/lib/types";
 import Link from "next/link";
@@ -28,9 +28,11 @@ async function FrontImage({ today }: { today: string }) {
           className="relative"
         />
       </div> */}
-          <div className="w-full p-1 mx-1">
-            <h2 className="text-xl float-start">{imageOfTheDay.title}</h2>
-            <h2 className="text-xl float-end">Today</h2>
+          <div className="w-full p-1 px-2 bg-gradient-to-t from-stone-900">
+            <h2 className="text-xl md:float-start">
+              {imageOfTheDay.title || "No image found at this time"}
+            </h2>
+            <h2 className="text-xl md:float-end">Today</h2>
           </div>
         </div>
       </Link>

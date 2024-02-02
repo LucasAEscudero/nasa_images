@@ -21,9 +21,7 @@ export default async function Home() {
       <FrontImage today={today} />
       <section>
         <h2 className="text-start text-2xl my-2 ml-2">Last 12 images</h2>
-        <Suspense fallback={<Spinner />}>
-          <ImagesCards images={images} />
-        </Suspense>
+        <ImagesCards images={images} />
       </section>
     </div>
   );
