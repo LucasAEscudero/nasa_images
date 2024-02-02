@@ -1,6 +1,7 @@
 "use client";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { FaCode } from "react-icons/fa";
 import Link from "next/link";
 
 const Footer = () => {
@@ -28,6 +29,13 @@ const Footer = () => {
           className="hover:text-[#1c1917]"
         >
           <FaGithub size={25} />
+        </Link>
+        <Link
+          href="https://github.com/LucasAEscudero/nasa_images"
+          target="_blank"
+          className="hover:text-orange-700"
+        >
+          <FaCode size={25} />
         </Link>
       </div>
     </footer>
