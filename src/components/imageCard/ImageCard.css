@@ -3,10 +3,6 @@
   border-top-right-radius: 0.25rem;
 }
 
-#container {
-  transition: 500ms;
-}
-
 @media (min-width: 768px) {
   .star {
     visibility: hidden;

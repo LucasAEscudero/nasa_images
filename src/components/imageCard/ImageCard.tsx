@@ -55,7 +55,6 @@ export default function ImageCard({ url, date, title, explanation, i }: Props) {
       transition={{ delay: i * 0.1, ease: "easeInOut", duration: 0.5 }}
       viewport={{ amount: 0 }}
       className="m-4 bg-stone-900 rounded"
-      id="container"
     >
       <div className="star">
         {favorite ? (
