@@ -22,7 +22,7 @@ const NavBar = () => {
           <div className="flex items-center">
             <Image
               src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg"
-              alt="nasa icon"
+              alt="Nasa"
               width={55}
               height={55}
             />

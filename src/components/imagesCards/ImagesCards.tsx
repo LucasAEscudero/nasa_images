@@ -1,3 +1,4 @@
+"use client";
 import ImageCard from "../imageCard/ImageCard";
 import { nasaImage } from "@/lib/types";
 

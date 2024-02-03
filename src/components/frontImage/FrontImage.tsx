@@ -1,12 +1,20 @@
-// import Image from "next/image";
 import fetcher from "@/lib/fetcher";
-import { nasaImage } from "@/lib/types";
 import Link from "next/link";
+import { format } from "date-fns";
+import { nasaImage } from "@/lib/types";
 
-import "./FrontImage.css";
+import "./TodayImage.css";
 
-async function FrontImage({ today }: { today: string }) {
+const fetchTodayImage = async () => {
+  const today: string = format(new Date(), "yyyy-MM-dd");
+
   const imageOfTheDay: nasaImage = await fetcher(`&date=${today}`);
+
+  return imageOfTheDay;
+};
+
+export default async function TodayImage() {
+  const imageOfTheDay: nasaImage = await fetchTodayImage();
 
   return (
     <section>
@@ -39,5 +47,3 @@ async function FrontImage({ today }: { today: string }) {
     </section>
   );
 }
-
-export default FrontImage;
