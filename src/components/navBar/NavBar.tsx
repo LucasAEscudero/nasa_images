@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { BsList } from "react-icons/bs";
 import Image from "next/image";
+import nasaIcon from "@/app/icon.png";
 
 import NavItems from "../navItems/NavItems";
 
@@ -20,12 +21,7 @@ const NavBar = () => {
              <span className="font-semibold">Images</span>
           </h2> */}
           <div className="flex items-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg"
-              alt="Nasa"
-              width={55}
-              height={55}
-            />
+            <Image src={nasaIcon} alt="Nasa" width={50} height={50} />
             <h2 className="hover:cursor-default">Images</h2>
           </div>
           <ul className="hidden md:flex md:gap-4">
