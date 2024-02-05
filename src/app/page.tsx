@@ -1,4 +1,4 @@
-import TodayImage from "@/components/frontImage/FrontImage";
+import TodayImage from "@/components/todayImage/TodayImage";
 import LastImages from "@/components/lastImages/LastImages";
 import { Suspense } from "react";
 import Spinner from "@/components/spinner/Spinner";
