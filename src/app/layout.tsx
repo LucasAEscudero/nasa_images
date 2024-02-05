@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
-  // metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`),
 };
 
 export default function RootLayout({
