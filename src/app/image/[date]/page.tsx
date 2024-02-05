@@ -1,9 +1,33 @@
 import fetcher from "@/lib/fetcher";
 import Image from "next/image";
 import { nasaImage } from "@/lib/types";
+import { Metadata } from "next";
 
-async function NasaImage({ params: { date } }: { params: { date: string } }) {
+interface Props {
+  params: { date: string };
+}
+
+export async function generateMetadata({
+  params: { date },
+}: Props): Promise<Metadata> {
   const image: nasaImage = await fetcher(`&date=${date}`);
+
+  return {
+    title: image.title,
+    description: image.explanation,
+    openGraph: {
+      images: [
+        {
+          url: image.url,
+        },
+      ],
+    },
+  };
+}
+
+async function NasaImage({ params: { date } }: Props) {
+  const image: nasaImage = await fetcher(`&date=${date}`);
+
   return (
     <section>
       <div className="md:flex md:justify-between m-1">

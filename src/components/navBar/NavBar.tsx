@@ -45,19 +45,20 @@ const NavBar = () => {
               <NavItems path="/" name="Home" />
               <NavItems path="/galery" name="Galery" />
               <NavItems path="/favorites" name="Favorites" />
+              <NavItems path="/about" name="About" />
             </ul>
           </div>
           {/* end nav */}
           <div className="hidden md:flex md:gap-2">
             <input
               type="date"
-              className="bg-black p-1 rounded-full"
+              className="bg-stone-800 p-1 rounded-full"
               value={date}
               onChange={handlerInputSearch}
               max={today}
             />
             <button
-              className="bg-black mx-2 p-3 rounded-full hover:bg-stone-700"
+              className="bg-stone-800 mx-2 p-3 rounded-full hover:bg-stone-700"
               type="button"
               onClick={handlerSearch}
             >
@@ -77,16 +78,17 @@ const NavBar = () => {
             <NavItems path="/" name="Home" />
             <NavItems path="/galery" name="Galery" />
             <NavItems path="/favorites" name="Favorites" />
+            <NavItems path="/about" name="About" />
             <div className="flex gap-2">
               <input
                 type="date"
-                className="bg-black p-1 rounded-full"
+                className="bg-stone-800 p-1 rounded-full"
                 value={date}
                 onChange={handlerInputSearch}
                 max={today}
               />
               <button
-                className="bg-black mx-2 p-3 rounded-full hover:bg-stone-700"
+                className="bg-stone-800 mx-2 p-3 rounded-full hover:bg-stone-700"
                 type="button"
                 onClick={handlerSearch}
               >
