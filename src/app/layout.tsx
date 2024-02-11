@@ -5,6 +5,7 @@ import { pt_sans } from "@/lib/fonts";
 
 import NavBar from "@/components/navBar/NavBar";
 import Footer from "@/components/footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,6 +43,7 @@ export default function RootLayout({
         <NavBar />
         <main>{children}</main>
         <Footer />
+        <Toaster position="top-right" />
       </body>
     </html>
   );
