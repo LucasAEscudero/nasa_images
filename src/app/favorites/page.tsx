@@ -1,11 +1,21 @@
 "use client";
 import { nasaImage } from "@/lib/types";
 import { useFavoriteStore } from "@/store/favoritesStore";
+import { useEffect } from "react";
+
 import ImagesCards from "@/components/imagesCards/ImagesCards";
 import Message from "@/components/message/Message";
 
 function Favorites() {
-  const favorites: nasaImage[] = useFavoriteStore((state) => state.favorites);
+  const { favorites, chargueFavorites } = useFavoriteStore((state) => state);
+
+  useEffect(() => {
+    const localImages: nasaImage[] | null = JSON.parse(
+      localStorage.getItem("localNasaImages") || '"'
+    );
+
+    if (localImages) chargueFavorites(localImages);
+  }, []);
 
   return (
     <section>

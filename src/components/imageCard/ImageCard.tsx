@@ -30,6 +30,10 @@ export default function ImageCard({ url, date, title, explanation, i }: Props) {
     if (favorite) {
       setFavorite(false);
       removeFavorite(date);
+      localStorage.setItem(
+        "localNasaImages",
+        JSON.stringify(favorites.filter((favorite) => favorite.date !== date))
+      );
     } else {
       setFavorite(true);
       addFavorite({
@@ -38,6 +42,10 @@ export default function ImageCard({ url, date, title, explanation, i }: Props) {
         date,
         explanation,
       });
+      localStorage.setItem(
+        "localNasaImages",
+        JSON.stringify([...favorites, { url, date, title, explanation }])
+      );
     }
   };
 

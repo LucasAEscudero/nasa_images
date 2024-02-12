@@ -8,6 +8,7 @@ export interface favoritesState {
   addFavorite: (image: nasaImage) => void;
   removeFavorite: (date: string) => void;
   resetFavorites: () => void;
+  chargueFavorites: (favs: nasaImage[]) => void;
 }
 
 export const useFavoriteStore = create<favoritesState>((set) => ({
@@ -23,5 +24,10 @@ export const useFavoriteStore = create<favoritesState>((set) => ({
     set((state) => ({
       ...state,
       favorites: [],
+    })),
+  chargueFavorites: (favs: nasaImage[]) =>
+    set((state) => ({
+      ...state,
+      favorites: [...favs],
     })),
 }));
