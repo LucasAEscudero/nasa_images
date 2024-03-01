@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useFavoriteStore } from "@/store/favoritesStore";
 import Image from "next/image";
 import Link from "next/link";
-import { MotionDiv } from "../motionDiv/MotionDiv";
+import { MotionArticle } from "../motionArticle/MotionArticle";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 
@@ -58,13 +58,13 @@ export default function ImageCard({ url, date, title, explanation, i }: Props) {
   }, [favorites]);
 
   return (
-    <MotionDiv
+    <MotionArticle
       variants={variants}
       initial="hidden"
       animate="visible"
       transition={{ delay: i * 0.1, ease: "easeInOut", duration: 0.5 }}
       viewport={{ amount: 0 }}
-      className="m-4 bg-stone-900 rounded"
+      className="m-4 bg-stone-900 rounded hover:scale-105"
       id="container"
     >
       <div className="star">
@@ -82,7 +82,7 @@ export default function ImageCard({ url, date, title, explanation, i }: Props) {
           </button>
         )}
       </div>
-      {url.includes("www.youtube.com") ? (
+      {url.includes("youtube.com") ? (
         <Link href={url} target="_blank">
           <h2 className="mt-5 mb-2 text-center text-blue-700">
             Esto es un video, haga click para verlo!
@@ -93,7 +93,7 @@ export default function ImageCard({ url, date, title, explanation, i }: Props) {
         <Link href={`/image/${date}`}>
           <Image
             src={url}
-            alt="No contiene una imagen, es un video"
+            alt={title + " image"}
             width={400}
             height={300}
             className="image"
@@ -102,6 +102,6 @@ export default function ImageCard({ url, date, title, explanation, i }: Props) {
           <h3 className="m-1">{title}</h3>
         </Link>
       )}
-    </MotionDiv>
+    </MotionArticle>
   );
 }
