@@ -83,11 +83,11 @@ export default function ImageCard({ url, date, title, explanation, i }: Props) {
         )}
       </div>
       {url.includes("youtube.com") ? (
-        <Link href={url} target="_blank">
-          <h2 className="mt-5 mb-2 text-center text-blue-700">
+        <Link href={url} target="_blank" className="">
+          <h2 className="mt-3 mb-4 text-center text-blue-700">
             Esto es un video, haga click para verlo!
           </h2>
-          <h3 className="m-1">{title}</h3>
+          <h3 className="mx-2 mb-1">{title}</h3>
         </Link>
       ) : (
         <Link href={`/image/${date}`}>
