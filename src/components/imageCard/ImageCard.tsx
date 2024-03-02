@@ -64,10 +64,10 @@ export default function ImageCard({ url, date, title, explanation, i }: Props) {
       animate="visible"
       transition={{ delay: i * 0.1, ease: "easeInOut", duration: 0.5 }}
       viewport={{ amount: 0 }}
-      className="m-4 bg-stone-900 rounded hover:scale-105"
+      className="m-4 bg-stone-900 relative rounded"
       id="container"
     >
-      <div className="star">
+      <div className="sm:invisible" id="image-star">
         {favorite ? (
           <button
             type="button"
@@ -91,15 +91,20 @@ export default function ImageCard({ url, date, title, explanation, i }: Props) {
         </Link>
       ) : (
         <Link href={`/image/${date}`}>
+          <h3
+            className="bg-gradient-to-t from-stone-900 w-full p-1 absolute left-0 bottom-0 sm:invisible rounded-b"
+            id="image-content"
+          >
+            {title}
+          </h3>
+
           <Image
             src={url}
             alt={title + " image"}
             width={400}
             height={300}
-            className="image"
+            className="rounded"
           />
-
-          <h3 className="m-1">{title}</h3>
         </Link>
       )}
     </MotionArticle>

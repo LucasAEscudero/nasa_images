@@ -1,14 +1,14 @@
-.image {
+/* .image {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-}
+} */
 
 @media (min-width: 768px) {
-  .star {
-    visibility: hidden;
+  #container:hover #image-star {
+    visibility: visible;
   }
 
-  #container:hover .star {
+  #container:hover #image-content {
     visibility: visible;
   }
 }
