@@ -3,7 +3,7 @@ import LastImages from "@/components/lastImages/LastImages";
 import { Suspense } from "react";
 import Spinner from "@/components/spinner/Spinner";
 
-export default async function Home() {
+export default function Home() {
   return (
     <Suspense fallback={<Spinner />}>
       <TodayImage />
