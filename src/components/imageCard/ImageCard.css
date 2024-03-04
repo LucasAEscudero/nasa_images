@@ -9,6 +9,7 @@
   }
 
   #container:hover #image-content {
-    visibility: visible;
+    /* visibility: visible; */
+    bottom: 0;
   }
 }

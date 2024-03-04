@@ -64,7 +64,7 @@ export default function ImageCard({ url, date, title, explanation, i }: Props) {
       animate="visible"
       transition={{ delay: i * 0.1, ease: "easeInOut", duration: 0.5 }}
       viewport={{ amount: 0 }}
-      className="m-4 bg-stone-900 relative rounded"
+      className="m-4 bg-stone-900 relative rounded overflow-hidden"
       id="container"
     >
       <div className="sm:invisible" id="image-star">
@@ -90,9 +90,9 @@ export default function ImageCard({ url, date, title, explanation, i }: Props) {
           <h3 className="mx-2 mb-1">{title}</h3>
         </Link>
       ) : (
-        <Link href={`/image/${date}`}>
+        <Link href={`/image/${date}`} className="">
           <h3
-            className="bg-gradient-to-t from-stone-900 w-full p-1 absolute left-0 bottom-0 sm:invisible rounded-b"
+            className="bg-gradient-to-t from-stone-900 w-full p-1 absolute left-0 rounded-b -bottom-[3rem] transition-all"
             id="image-content"
           >
             {title}
