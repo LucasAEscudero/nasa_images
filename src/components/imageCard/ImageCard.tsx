@@ -90,7 +90,7 @@ export default function ImageCard({ url, date, title, explanation, i }: Props) {
           <h3 className="mx-2 mb-1">{title}</h3>
         </Link>
       ) : (
-        <Link href={`/image/${date}`} className="">
+        <Link href={`/image/${date}`}>
           <h3
             className="bg-gradient-to-t from-stone-900 w-full p-1 absolute left-0 rounded-b -bottom-[3rem] transition-all"
             id="image-content"
